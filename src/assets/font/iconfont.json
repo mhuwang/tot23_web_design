@@ -1,0 +1,205 @@
+{
+  "id": "2426579",
+  "name": "aaa",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "9673167",
+      "name": "容器",
+      "font_class": "rongqi",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "8158787",
+      "name": "预测",
+      "font_class": "yuce",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "18802302",
+      "name": "边缘计算",
+      "font_class": "bianyuanjisuan",
+      "unicode": "e746",
+      "unicode_decimal": 59206
+    },
+    {
+      "icon_id": "18668664",
+      "name": "pod列表",
+      "font_class": "podliebiao",
+      "unicode": "e6bc",
+      "unicode_decimal": 59068
+    },
+    {
+      "icon_id": "2740818",
+      "name": "发现",
+      "font_class": "faxian",
+      "unicode": "e640",
+      "unicode_decimal": 58944
+    },
+    {
+      "icon_id": "9935857",
+      "name": "云",
+      "font_class": "yun",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "588636",
+      "name": "配置",
+      "font_class": "peizhi",
+      "unicode": "e6d8",
+      "unicode_decimal": 59096
+    },
+    {
+      "icon_id": "1385686",
+      "name": "set",
+      "font_class": "set",
+      "unicode": "e7c3",
+      "unicode_decimal": 59331
+    },
+    {
+      "icon_id": "3290609",
+      "name": "deployments",
+      "font_class": "deployments",
+      "unicode": "e63f",
+      "unicode_decimal": 58943
+    },
+    {
+      "icon_id": "3300519",
+      "name": "config_map",
+      "font_class": "configmap",
+      "unicode": "e646",
+      "unicode_decimal": 58950
+    },
+    {
+      "icon_id": "4685780",
+      "name": "文件夹",
+      "font_class": "Group-",
+      "unicode": "e6ad",
+      "unicode_decimal": 59053
+    },
+    {
+      "icon_id": "6263310",
+      "name": "系统负载",
+      "font_class": "xitongfuzai",
+      "unicode": "e662",
+      "unicode_decimal": 58978
+    },
+    {
+      "icon_id": "6830202",
+      "name": "statefulset",
+      "font_class": "statefulset",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "10250623",
+      "name": "Pod",
+      "font_class": "Pod",
+      "unicode": "ec65",
+      "unicode_decimal": 60517
+    },
+    {
+      "icon_id": "10558275",
+      "name": "创建",
+      "font_class": "chuangjian",
+      "unicode": "e644",
+      "unicode_decimal": 58948
+    },
+    {
+      "icon_id": "11125240",
+      "name": "自定义",
+      "font_class": "18",
+      "unicode": "e61f",
+      "unicode_decimal": 58911
+    },
+    {
+      "icon_id": "11927051",
+      "name": "存储",
+      "font_class": "gdpqushi",
+      "unicode": "ed10",
+      "unicode_decimal": 60688
+    },
+    {
+      "icon_id": "12188723",
+      "name": "icon_secrets",
+      "font_class": "icon_secrets",
+      "unicode": "e645",
+      "unicode_decimal": 58949
+    },
+    {
+      "icon_id": "13808035",
+      "name": "关于",
+      "font_class": "guanyu",
+      "unicode": "e659",
+      "unicode_decimal": 58969
+    },
+    {
+      "icon_id": "14217353",
+      "name": "Service icon",
+      "font_class": "Serviceicon",
+      "unicode": "e63c",
+      "unicode_decimal": 58940
+    },
+    {
+      "icon_id": "15164323",
+      "name": "secret-side",
+      "font_class": "secret-side",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "15229485",
+      "name": "ingress",
+      "font_class": "ingress",
+      "unicode": "f37a",
+      "unicode_decimal": 62330
+    },
+    {
+      "icon_id": "15606971",
+      "name": "cron job",
+      "font_class": "cronjob",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "17772374",
+      "name": "controller_system",
+      "font_class": "controller_system",
+      "unicode": "e6d3",
+      "unicode_decimal": 59091
+    },
+    {
+      "icon_id": "18582041",
+      "name": "replicate_rows",
+      "font_class": "replicate_rows",
+      "unicode": "ed70",
+      "unicode_decimal": 60784
+    },
+    {
+      "icon_id": "19344243",
+      "name": "job",
+      "font_class": "job",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "20234097",
+      "name": "个人信息 personal information ",
+      "font_class": "gerenxinxipersonalinformation",
+      "unicode": "e61b",
+      "unicode_decimal": 58907
+    },
+    {
+      "icon_id": "5542509",
+      "name": "概况",
+      "font_class": "gaikuang",
+      "unicode": "e70b",
+      "unicode_decimal": 59147
+    }
+  ]
+}
