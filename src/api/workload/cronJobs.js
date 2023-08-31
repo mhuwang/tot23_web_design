@@ -10,7 +10,8 @@ export function getAllCronJobs(data) {
     params: {
       current: data.current,
       size: data.size,
-      fileName: data.fileName
+      fileName: data.fileName,
+      fileType: "images"
     }
   })
 }
