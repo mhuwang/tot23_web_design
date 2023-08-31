@@ -137,12 +137,14 @@ export default {
   },
 
   methods: {
+
+
     /** 基础 */
     //搜索通过文件名
     searchByFileName() {
       const data = {
-        current: "1",
-        size: "2",
+        current: "0",
+        size: "5",
         fileName:  this.searchInput
       }
       this.$store
@@ -150,6 +152,34 @@ export default {
         .then((res) => {
           console.log(res.data)
           
+          this.pageSize = parseInt(data.size)
+          // this.cronJobs =res.data
+          this.cronJobsAmount = res.data.total
+          // this.cronJobsInCurrentPage = this.cronJobs.slice(0, this.pageSize)
+          this.cronJobsInCurrentPage =res.data.records
+          this.current = res.current
+          this.size = res.size
+        })
+        .catch((error) => {
+          console.log(error)
+          this.cronJobs = []
+          this.cronJobsAmount = 0
+          this.cronJobsInCurrentPage = []
+        })
+     
+    },
+
+    handleAvatarSuccess(){
+      console.log("handleAvatarSuccess");
+      this.$refs.upload.clearFiles();
+    },
+
+    // 获取所有 CronJobs
+    getCronJobs(data) {
+      this.$store
+        .dispatch('cronJobs/getAllCronJobs', data)
+        .then((res) => {
+          console.log(res.data)
           this.pageSize = parseInt(data.size)
           // this.cronJobs =res.data
           this.cronJobsAmount = res.data.total
@@ -165,33 +195,7 @@ export default {
       this.loading = false
     },
 
-    handleAvatarSuccess(){
-      console.log("handleAvatarSuccess");
-      this.$refs.upload.clearFiles();
-    },
-
-    // 获取所有 CronJobs
-    getCronJobs(data) {
-      this.$store
-        .dispatch('cronJobs/getAllCronJobs', data)
-        .then((res) => {
-          console.log(res.data)
-          this.pageSize = data.size
-          // this.cronJobs =res.data
-          this.cronJobsAmount = res.data.total
-          // this.cronJobsInCurrentPage = this.cronJobs.slice(0, this.pageSize)
-          this.cronJobsInCurrentPage =res.data.records
-        })
-        .catch((error) => {
-          console.log(error)
-          this.cronJobs = []
-          this.cronJobsAmount = 0
-          this.cronJobsInCurrentPage = []
-        })
-      this.loading = false
-    },
-
-    // 获取所有 CronJobs
+    //下载
     loadfile(fileId,fileName) {
       this.$axios({
         url: "http://localhost:8060/files/download?fileId="+ fileId,
@@ -222,7 +226,7 @@ export default {
         })
       })
     },
-
+    //上传
     uploadFile(params) {
      // debugger;
       console.log(params)
@@ -240,6 +244,7 @@ export default {
           console.log(res)
           self.$refs.upload.clearFiles();
           this.$message("添加成功")
+
         })
         .catch(() => {})
     },
@@ -273,6 +278,7 @@ export default {
             })
         })
         .catch(() => {})
+      
     },
 
     /** 分页*/
