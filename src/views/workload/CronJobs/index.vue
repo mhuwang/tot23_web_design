@@ -1,5 +1,18 @@
 <template>
   <div>
+    <el-dialog
+        :visible.sync="dialogVisible"
+        width="40%"
+        :before-close="handleClose"
+        :append-to-body="true" 
+        >
+        <el-image 
+          style="width: 100%; height: 100%"
+          :src="imgUrl" 
+          :preview-src-list="srcList">
+        </el-image>
+
+      </el-dialog>
     <!-- CronJobs 主体部分 -->
     <el-card class="box-card">
       <div slot="header" class="clearfix">
@@ -79,9 +92,9 @@
                   <!-- 删除 -->
             <el-button
               type="warning"
-              icon="el-icon-delete"
+              icon="el-icon-search"
               size="small"
-              @click=""
+              @click="preview(scope.row.fileId,scope.row.fileName)"
             >预览</el-button>
           </template>
         </el-table-column>
@@ -124,6 +137,9 @@ export default {
       cronJobsInCurrentPage: [], // 页面中的 CronJobs
       pageSize: 6, // 一页显示数量
       /** 编辑 */
+      imgUrl:'', 
+      srcList: [],
+      dialogVisible: false,
     }
   },
 
@@ -142,7 +158,7 @@ export default {
     searchByFileName() {
       const data = {
         current: "1",
-        size: "2",
+        size: "5",
         fileName:  this.searchInput
       }
       this.$store
@@ -155,12 +171,15 @@ export default {
           this.cronJobsAmount = res.data.total
           // this.cronJobsInCurrentPage = this.cronJobs.slice(0, this.pageSize)
           this.cronJobsInCurrentPage =res.data.records
+          this.current = res.current
+          this.size = res.size
         })
         .catch((error) => {
           console.log(error)
           this.cronJobs = []
           this.cronJobsAmount = 0
           this.cronJobsInCurrentPage = []
+          
         })
       this.loading = false
     },
@@ -223,6 +242,28 @@ export default {
       })
     },
 
+    preview(fileId,fileName) {
+      this.$axios({
+        url: "http://localhost:8060/files/download?fileId="+ fileId,
+        method: 'get',
+        headers: {
+          'token': window.sessionStorage.getItem('Token')
+        },
+        data: {
+
+        },
+        responseType: 'blob'
+      }).then((res) => {
+        let blob = new Blob([res.data]);
+        const imageUrl = URL.createObjectURL(blob);
+        this.dialogVisible = true;
+          this.imgUrl = imageUrl;
+          this.srcList.push(imageUrl);
+    
+      })
+    },
+
+
     uploadFile(params) {
      // debugger;
       console.log(params)
@@ -240,6 +281,12 @@ export default {
           console.log(res)
           self.$refs.upload.clearFiles();
           this.$message("添加成功")
+          const data = {
+            current: "1",
+            size: "5",
+            fileName:""
+          }
+          this.getCronJobs(data)
         })
         .catch(() => {})
     },
@@ -263,6 +310,12 @@ export default {
               console.log(res)
               if (res.success) {
                 this.$message.success('删除成功')
+                const data = {
+                  current: "1",
+                  size: "5",
+                  fileName:""
+                }
+                this.getCronJobs(data)
               } else {
                 this.$message.error('删除失败')
               }

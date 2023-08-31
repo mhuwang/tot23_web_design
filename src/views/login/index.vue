@@ -131,7 +131,7 @@ export default {
   data() {
     return {
       loginForm: {
-        username: "laoli",
+        username: "ghb321",
         password: "123456",
       },
       register_loginForm: {
